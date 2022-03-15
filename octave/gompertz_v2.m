@@ -3,7 +3,7 @@ clear all; clf;
 % gompertz function %
 function f_gomp = gompertz(m, x)
   % input m: a vector i.e. 3-tuple  of v0, a, b           %
-  % input x:  represents time t steps                       %
+  % input x:  represents time t steps                     %
   % define locals to conform with the given function      %
   % not really necessary but gives better visual display  % 
   c  = m(2)/m(3);    %  c=m(2)/m(3) is a/b in the original equation
