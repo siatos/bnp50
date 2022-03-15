@@ -27,7 +27,7 @@ for i = 1:2
     for j = 1:2000
         % a nice trick to provide time in steps instead of providing time with a vector
         % obviously t(1,:)= t(2,:) = t vector with values 0.1..200 step 0.1
-        t(i,j) = j/10; 
+        t(i,j) = j/10;
         funcg (i,j) = gompertz(params(i,:), t(i,j));
     end
     % create also a legend for each graph
