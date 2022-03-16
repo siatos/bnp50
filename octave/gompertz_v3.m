@@ -7,7 +7,7 @@ function f_gomp = gompertz(m, x)
   % define locals to conform with the given function      %
   % not really necessary but gives better visual display  % 
   c  = m(2)/m(3);    %  c=m(2)/m(3) is a/b in the original equation
-  v0 = m(1)          %  v0=1 given 
+  v0 = m(1)          %  v0=v(0)=1 given 
   b  = m(3)          %  m(3) is b in the original equation 
 	f_gomp =  v0*exp(c*(1-exp(-b*x))) 
 end;
@@ -15,8 +15,8 @@ end;
 clear;
 
 % declare a 3x3 vector to used as input row by row %
-% i.e there will be two graphs one for each row    %
-% each row  contains v0, a and b parameters        %
+% i.e there will be three graphs one for each row  %
+% each row  contains: v0, a and b parameters        %
 params = [1 1 0.055; 1 0.5 0.03; 1 0.8 0.04];
 
 % declare a cell of 1x3 strings to be used as legend initial value  %
@@ -27,7 +27,7 @@ for i = 1:3 % we have 3 input vectors
     for j = 1:3000 % time values from 0.1..300 with step 0.1 
         % a trick to provide time in steps instead of providing time with a vector
         % obviously t(1,:)= t(2,:) = t vector with values 0.1..300 step 0.1
-        t(i,j) = j/10; 
+        t(i,j) = j/10;
         funcg (i,j) = gompertz(params(i,:), t(i,j));
     end
     % create also a legend for each graph
