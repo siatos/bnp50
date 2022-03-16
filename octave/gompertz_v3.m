@@ -14,17 +14,17 @@ end;
 
 clear;
 
-% declare a 2x3 vector to used as input row by row %
+% declare a 3x3 vector to used as input row by row %
 % i.e there will be two graphs one for each row    %
 % each row  contains v0, a and b parameters        %
 params = [1 1 0.055; 1 0.5 0.03; 1 0.8 0.04];
 
-% declare a cell of 1x2 strings to be used as legend initial value  %
+% declare a cell of 1x3 strings to be used as legend initial value  %
 lgnd = {"", "", ""}
 
 % loop through the rows of params vector and calculate function values %
-for i = 1:3
-    for j = 1:3000
+for i = 1:3 % we have 3 input vectors     
+    for j = 1:3000 % time values from 0.1..300 with step 0.1 
         % a trick to provide time in steps instead of providing time with a vector
         % obviously t(1,:)= t(2,:) = t vector with values 0.1..300 step 0.1
         t(i,j) = j/10; 
