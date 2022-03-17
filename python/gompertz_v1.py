@@ -3,9 +3,8 @@ import matplotlib.pyplot as plt
 plt.rcParams['figure.figsize'] = [12, 8]
 
 # Function defined with default values if none are passed
-a=[1.2, 2.2, 2, 1]
-#b=[1, 2, 4]
-b=[1.2, 2.2, 1, 2]
+a=[1.0, 0.5, 0.8]
+b=[0.055, 0.03, 0.04]
 V0=1
 def gompertz_calc(a, b, V0):
     x = np.linspace(0, 8, 100)
