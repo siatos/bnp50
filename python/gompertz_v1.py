@@ -7,7 +7,7 @@ a=[1.0, 0.5, 0.8]
 b=[0.055, 0.03, 0.04]
 V0=1
 def gompertz_calc(a, b, V0):
-    x = np.linspace(0, 8, 100)
+    x = np.linspace(0, 300, 3000)
     f = lambda x: V0*np.exp(a*(1 - np.exp(x*(-b)))/b) 
     return f(x),x
 
@@ -23,8 +23,8 @@ for a_n, b_n in zip(a,b):
 # Set Plot Details
 plt.ylabel('y')
 plt.xlabel('x')
-plt.ylim(0, 10)
-plt.xlim(0, 8)
+plt.ylim(0, 500000000)
+plt.xlim(0, 300)
 plt.legend(loc="upper right")
 plt.grid(True)
 plt.show()
