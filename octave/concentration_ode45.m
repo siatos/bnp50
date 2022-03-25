@@ -46,7 +46,7 @@ for i=1:3
    %solve odes by using ode45 (runge-kutta) and anonymous function handle
    [T,S] = ode45(rate2, Tinterval, S0);
  
-   % get the two different s1 and s2 plots
+   % get the two different s1 and s2 concentrations 
    Y(i,:) = S(:,1);  % s1
    Z(i,:) = S(:,2);  % s2 
 
@@ -59,7 +59,7 @@ ylabel('S1(t) & S2(t)')
 % set grid on
 grid on                                   
 
-% additional display properties
+% additional display properties  for the first figure concentrations S1(t) & S2(t)
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Concentration Rates of S1 and S2 species')
 
@@ -74,7 +74,33 @@ for i=1:3
 end  
 
 
-%release hold of plot engine
-hold off
-  
+%release hold of plot engine we finished with first figure
+hold off 
+figure    % need a second figure for the phase diagrams 
 
+hold on  % get the hold
+
+% display specifics %
+xlabel('S1')
+ylabel('S2')
+
+% set grid on
+grid on                                   
+
+% additional display properties  for the first figure concentrations S1(t) & S2(t)
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Phase Diagram Plots of S1 and S2')
+
+% declare a cell of 1x3 strings to be used as legend initial value  %
+lgnd = {"", "", ""}
+
+for i=1:3
+   % each phase diagram is a plot of s1 vs s2
+   % there will be three plots within the same figure
+   %recreate the legend  
+   lgnd{i} = sprintf("k1=%d k2=%d k3=%d k4=%d k5=%d K=%d n=%d", params(i,1), params(i,2), params(i,3), params(i,4), params(i,5), params(i, 6), params(i, 7))
+   h = plot(Y(i,:), Z(i,:), colors(i), 'linewidth', 1.5)   
+end  
+legend (lgnd{1}, lgnd{2}, lgnd{3}, "location", "northeast");                
+set (legend, "fontsize", 12); 
+hold off
