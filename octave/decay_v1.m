@@ -2,11 +2,11 @@ clear all; clf;
 
 % function to calculate a(t) = 100/exp(kt) %
 function f_calc = expat(m, t)
-  % input m: a vector i.e. 2-tuple  of a0, k      %
-  % input t:  represents time t steps             %
-  a0 = m(1)          %  a0=a(0)=100 given 
-  k  = m(2)          %  m(2) is k in the original equation 
-	f_calc =  a0/exp(k*t) 
+   % input m: a vector i.e. 2-tuple  of a0, k      %
+   % input t:  represents time t steps             %
+   a0 = m(1)          %  a0=a(0)=100 given 
+   k  = m(2)          %  m(2) is k in the original equation 
+   f_calc =  a0/exp(k*t) 
 end;
 
 clear;
