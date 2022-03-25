@@ -2,7 +2,7 @@ clear all
 
 % Initial conditions (s1 = 0, s2 = 0)
 initial_values = [0, 0];
-times = 0:0.02:5;
+times = 0:0.02:3;
 
 function dsdt = concetration1(s,t) 
 
@@ -69,4 +69,15 @@ trajectory2 = lsode("concetration2", initial_values, times);
 % Find the trajectories of s1 & s2 2nd case
 trajectory3 = lsode("concetration3", initial_values, times);
 
-plot(times, trajectory1, 'linewidth', 1, times,  trajectory2, 'linewidth', 2, times, trajectory3, 'linewidth', 3)
+plot(times, trajectory1, 'linewidth', 1, 'g', times,  trajectory2, 'linewidth', 2, 'k', times, trajectory3, 'linewidth', 3, 'b')
+
+% display specifics %
+xlabel('Time t')
+ylabel('S1(t) & S2(t)')
+
+% set grid on
+grid on                                   
+
+% additional display properties
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Concentration Rates of S1 and S2 species')
