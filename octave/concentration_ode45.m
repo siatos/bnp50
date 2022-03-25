@@ -10,7 +10,7 @@ params = [20 5 5 5 2 1 4; 30 6 6 6 3 2 5; 10 2 2 2 2 1 2]
 % but different linewidth to be distinguishable
 % first row of params will be green
 % second row will be black
-% thirs row will be blue
+% third row will be blue
 
 colors = ['g'; 'k'; 'b'] 
 
@@ -23,7 +23,7 @@ function res = rate(t,S, k1, k2, k3, k4, k5, K, n)
     s1 = S(1);
     s2 = S(2);
     dsdt1 = k1/(1+power((s2/K), n))-k3*s1-k5*s1;
-	  dsdt2 = k2 + k5*s1-k4*s2
+    dsdt2 = k2 + k5*s1-k4*s2
     % Pack-up result
     res = [dsdt1; dsdt2];
 end
@@ -64,8 +64,7 @@ set(gca, 'fontsize', 24, 'linewidth', 1)
 title('Concentration Rates of S1 and S2 species')
 
 for i=1:3
-
-   % draw specifics to distinguish teh plots - we will have six plots within the same graph plot
+   % draw specifics to distinguish the plots - we will have six plots within the same graph plot
    % draw s1 "thin" s2 "fat" use same color for both graphs
    lstr = sprintf("k1=%d k2=%d k3=%d k4=%d k5=%d K=%d n=%d", params(i,1), params(i,2), params(i,3), params(i,4), params(i,5), params(i, 6), params(i, 7))
    lgnd1 = sprintf("%s%s", "s1(t):", lstr)
