@@ -14,9 +14,6 @@ params = [20 5 5 5 2 1 4; 30 6 6 6 3 2 5; 10 2 2 2 2 1 2]
 
 colors = ['g'; 'k'; 'b'] 
 
-% declare a cell of 1x3 strings to be used as legend initial value  %
-lgnd = {"", "", ""}
-
 function res = rate(t,S, k1, k2, k3, k4, k5, K, n)
 
     % Dependent variables S - vector of s1 & s2 
@@ -87,7 +84,7 @@ ylabel('S2')
 % set grid on
 grid on                                   
 
-% additional display properties  for the first figure concentrations S1(t) & S2(t)
+% additional display properties  for the second figure phase diagrams S1(t) & S2(t)
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Diagram Plots of S1 and S2')
 
@@ -97,7 +94,7 @@ lgnd = {"", "", ""}
 for i=1:3
    % each phase diagram is a plot of s1 vs s2
    % there will be three plots within the same figure
-   %recreate the legend  
+   % recreate the legend  
    lgnd{i} = sprintf("k1=%d k2=%d k3=%d k4=%d k5=%d K=%d n=%d", params(i,1), params(i,2), params(i,3), params(i,4), params(i,5), params(i, 6), params(i, 7))
    h = plot(Y(i,:), Z(i,:), colors(i), 'linewidth', 1.5)   
 end  
