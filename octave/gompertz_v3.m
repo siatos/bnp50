@@ -26,7 +26,7 @@ lgnd = {"", "", ""}
 for i = 1:3 % we have 3 input vectors     
     for j = 1:3000 % time values from 0.1..300 with step 0.1 
         % a trick to provide time in steps instead of providing time with a vector
-        % obviously t(1,:)= t(2,:) = t vector with values 0.1..300 step 0.1
+        % obviously t(1,:)= t(2,:) = t(3, :) = t vector with values 0.1..300 step 0.1
         t(i,j) = j/10;
         funcg (i,j) = gompertz(params(i,:), t(i,j));
     end
