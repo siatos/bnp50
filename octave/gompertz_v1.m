@@ -39,10 +39,7 @@ v2=v0*exp(c*(1-exp(-b*t)))
 % define display characteristics for the graphs
 % line thickness is 2
 % first will displayed red, second blue third yellow forth black 
-plot(t, v1,' r', 'linewidth', 2, 
-     t, v2, ' b', 'linewidth', 2) 
-%     t, v3, ' y', 'linewidth', 2, 
-%     t, v4, ' k', 'linewidth', 2)
+plot(t, v1,' r', 'linewidth', 2, t, v2, ' b', 'linewidth', 2) 
 
 
 % set grid on
