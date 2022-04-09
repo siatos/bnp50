@@ -5,4 +5,5 @@ Contains all octave code
 - decay_v1.m: calculates exponential descay using different set of params each time
 - concetration_lsode.m: solves the odes that describe the concetrations s1(t) and s2(t) of two species. Uses lsode method to solve the odes 
 - concetration_ode45.m: solves the odes that describe the concetrations s1(t) and s2(t) of two species. Uses ode45 method to solve the odes
+- LV.m solves the system of odes of the Lotka-Voltera Predator-Prey Model (uses ode45)
 
