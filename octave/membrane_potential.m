@@ -45,7 +45,7 @@ for i = 1:3 % we have 3 input vectors
 end
 
 % plot the graphs
-plot(t(1,:), funcg(1,:),' r', 'linewidth', 2, t(2,:), funcg(2,:),' k', 'linewidth', 2, t(3,:), funcg(3,:),' c', 'linewidth', 2)
+plot(t(1,:), funcg(1,:),' r', 'linewidth', 2.5, t(2,:), funcg(2,:),' k', 'linewidth', 2.5, t(3,:), funcg(3,:),' c', 'linewidth', 2.5)
 % display specifics %
 xlabel('t')
 ylabel('Membrane Potential (mV)')
@@ -60,7 +60,6 @@ legend (lgnd{1}, lgnd{2}, lgnd{3}, "location", "northeast");
 set (legend, "fontsize", 12);
 % release hold
 %hold off
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % SECOND CASE - DIFFERENT PARAMS                                 % 
