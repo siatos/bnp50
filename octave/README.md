@@ -7,4 +7,7 @@ Contains all octave code
 - concetration_ode45.m: solves the odes that describe the concetrations s1(t) and s2(t) of two species. Uses ode45 method to solve the odes
 - LV.m: solves the system of odes of the Lotka-Voltera Predator-Prey Model (uses ode45)
 - membrane_potential.m: solves and plots the mebrane potential graphs 
+- membrane_potential_ode.m: solves and plots the ode of the above solution
+- LV_split_time.m : solves the sytem of odes of the LV model above but this time using two different but adjacent time intervals
+- CA_Bind_rate.m calculates the bind rate 
 
