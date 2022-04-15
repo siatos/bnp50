@@ -20,7 +20,7 @@ lgnd = {"", "", "", "",""}
 
 %%%%%%% Parameter vector  - 5 sets of params %%%%%%%%%%%%
 %%                                                     %%
-%%    First three cases = relationship between e, V0   %%
+%%    First three cases = relationship between E & V0  %%
 %%    The other two concentrate on the ratio g/C       %%  
 %%                                                     %%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% 
@@ -33,7 +33,7 @@ params = [-75 -50 0.02 0.04;
 
 % loop through the rows of params vector and calculate function values %
 for i = 1:5 % we have 5 input parameter sets  
-    for j = 1:2001 % time values from 0.0..1 with step 0.01 
+    for j = 1:2001 % time values from 0.0..20 with step 0.01 
         t(i,j) = (j-1)/100;
         funcg(i, j) =  membrane_potential (t(i,j), params(i,:));
     end
@@ -60,7 +60,7 @@ grid on
 
 % additional display properties
 set(gca, 'fontsize', 20, 'linewidth', 1)  
-title('ΞΞµΞΌΞ²ΟΞ±Ξ½ΞΉΞΊΞ¬ Ξ”Ο…Ξ½Ξ±ΞΌΞΉΞΊΞ¬ -Different parameters')
+title('Μεμβρανικά Δυναμικά -Different parameters')
 
 % add a legend
 legend (lgnd{1}, lgnd{2}, lgnd{3}, lgnd{4}, lgnd{5},"location", "northeast");                
