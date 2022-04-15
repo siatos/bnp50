@@ -89,7 +89,7 @@ ylabel('Y(t): Θήραμα t < 25')
 grid on                                   
 % additional display properties
 set(gca, 'fontsize', 24, 'linewidth', 1)  
-title('Phase Portrait for Lotka-Voltera Model')
+title('Phase Portrait for Lotka-Voltera Model 1st case t < 25')
 
 figure(3) % need a third figure for the phase diagrams 
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
@@ -101,7 +101,7 @@ ylabel('Y(t): Θήραμα 25 < t')
 grid on                                   
 % additional display properties
 set(gca, 'fontsize', 24, 'linewidth', 1)  
-title('Phase Portrait for Lotka-Voltera Model')
+title('Phase Portrait for Lotka-Voltera Model 1st case t > 25')
 
 
 
