@@ -93,7 +93,7 @@ title('Phase Portrait for Lotka-Voltera Model')
 
 figure(3) % need a third figure for the phase diagrams 
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
-h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
+h = plot(V2(:,1), V2(:,2), 'k', 'linewidth', 1)   
 % display specifics %
 xlabel('X(t): Θηρευτής 25 < t')
 ylabel('Y(t): Θήραμα 25 < t')
