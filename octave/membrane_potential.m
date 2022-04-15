@@ -60,7 +60,7 @@ grid on
 
 % additional display properties
 set(gca, 'fontsize', 20, 'linewidth', 1)  
-title('Μεμβρανικά Δυναμικά -Different parameters')
+title('ΞΞµΞΌΞ²ΟΞ±Ξ½ΞΉΞΊΞ¬ Ξ”Ο…Ξ½Ξ±ΞΌΞΉΞΊΞ¬ -Different parameters')
 
 % add a legend
 legend (lgnd{1}, lgnd{2}, lgnd{3}, lgnd{4}, lgnd{5},"location", "northeast");                
