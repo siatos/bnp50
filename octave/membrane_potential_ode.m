@@ -1,6 +1,6 @@
 clear all; 
 clf;
-v0(1) = -100;
+%v0(1) = -100;
 %% Function definition %%%
 function res = membrane_potential(t,V, p)
    v1 = V(1)
@@ -32,7 +32,7 @@ rate = @(t,V) membrane_potential(t,V, params);
 h = plot(T, V1(:), 'r', 'linewidth', 1.5, 
          T, V2(:), 'r', 'linewidth', 1.5, 
          T, V3(:), 'r', 'linewidth', 1.5, 
-         T, V4(:), 'b', 'linewidth', 1.5,
-         T, V5(:), 'b', 'linewidth', 1.5)
+         T, V4(:), 'k', 'linewidth', 1.5,
+         T, V5(:), 'y', 'linewidth', 1.5)
    
            
