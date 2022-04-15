@@ -38,7 +38,7 @@ for i = 1:5 % we have 5 input parameter sets
         funcg(i, j) =  membrane_potential (t(i,j), params(i,:));
     end
     % create also a legend for each graph
-    lgnd{i} = sprintf("Ε= %2.1f V0= %2.1f G/C= %2.4f \n", params(i, 1), params(i, 2), params(i, 3)/params(i, 4))
+    lgnd{i} = sprintf("Γ…= %2.1f V0= %2.1f G/C= %2.4f \n", params(i, 1), params(i, 2), params(i, 3)/params(i, 4))
 end
 
 
@@ -60,7 +60,7 @@ grid on
 
 % additional display properties
 set(gca, 'fontsize', 20, 'linewidth', 1)  
-title('Μεμβρανικά Δυναμικά Different parameters')
+title('ΞΞµΞΌΞ²ΟΞ±Ξ½ΞΉΞΊΞ¬ Ξ”Ο…Ξ½Ξ±ΞΌΞΉΞΊΞ¬ -Different parameters')
 
 % add a legend
 legend (lgnd{1}, lgnd{2}, lgnd{3}, lgnd{4}, lgnd{5},"location", "northeast");                
