@@ -2,13 +2,10 @@
 
 %Initial values and params
 y01(1) = 20  % Initial predator population
-y01(2) = 80  % Initial paey population
+y01(2) = 80  % Initial prey population
  
-%y0 = [20, 80];          % initial values of x & y
-%Tinterval = 0:0.05:50   % time step of 0.01 in total 201 values
-
 % Time interval
-Tinterval = linspace(0, 50, 1001)   % time step of 0.01 in total 201 values
+Tinterval = linspace(0, 50, 1001)   % time step of 0.05 in total 1001 values
 
 % we have two set of params declared as a vector of two rows
 % first row will be used for t < 25
@@ -17,6 +14,7 @@ params = [40 2 0.5 70; 20 1 0.25 35]
 
 colors = ['k', 'r']  % predator (X) color black, prey (Y) color red 
 
+%%%%%%%%% Solve system of odes  %%%%%%%%%%%%%%%%%%%%%%%
 % define a function that contains the system of LV odes
 function res = LV(t,V, params)
   
@@ -43,59 +41,60 @@ function res = LV(t,V, params)
     res = [dxdt; dydt];
 end
 
-
-% hold the plot engine
-hold on 
-
-%  
 % use anonymous function and get the handle
 rate2 = @(t,V) LV(t,V, params);
    
-% solve odes by using ode45 (runge-kutta) and anonymous function handle
+% solve odes by using ode45 and anonymous function handle
 % y01 is the initial value vector
-% return oa vector of type (t, v) where v = v(1), v(2) at any time t
-[T,V] = ode45(rate2, Tinterval, y01);
- 
+% return a vector of type (t, v) where v = v(1), v(2) at any time t
+[T,V] = ode45(rate2, Tinterval, y01); 
 
+%%%%%%%% First figure %%%%%%%%%%%%%%%
+% Both poulations  X(t), Y(t) will be displayed
+figure(1)     
+lgnd1 = sprintf("%s%s", "Î§(t):", "Î Î»Î·Î¸Ï…ÏƒÎ¼ÏŒÏ‚ Î˜Î·ÏÎµÏ…Ï„Î®")
+lgnd2 = sprintf("%s%s", "Î¥(t):", "Î Î»Î·Î¸Ï…ÏƒÎ¼ÏŒÏ‚ Î˜Î·ÏÎ¬Î¼Î±Ï„Î¿Ï‚ ")
+h1 = plot(T, V(:,1), 'r', 'linewidth', 1.5, 'DisplayName', lgnd1, 
+         T, V(:,2), 'k', 'linewidth',  2, 'DisplayName', lgnd2)
+legend({lgnd1, lgnd2});
 % display specifics %
 xlabel('Time t')
-ylabel('X(t): ÈçñåõôÞò - Y(t): ÈÞñáìá - N=ÈçñåõôÞò+ÈÞñáìá (X+Y)')
-
+ylabel('X(t): Î˜Î·ÏÎµÏ…Ï„Î®Ï‚ - Y(t): Î˜Î®ÏÎ±Î¼Î±')
 % set grid on
 grid on                                   
-
-% additional display properties  for the first figure concentrations S1(t) & S2(t)
+% additional display properties  for the figure
 set(gca, 'fontsize', 24, 'linewidth', 1)  
-title('Lotka-Voltera Prey-Predator model')
+title('Lotka-Voltera Prey-Predator model, X & Y populations')
 
-lgnd1 = sprintf("%s%s", "×(t):", "Ðëçèõóìüò ÈçñåõôÞ")
-lgnd2 = sprintf("%s%s", "Õ(t):", "Ðëçèõóìüò ÈçñÜìáôïò ")
-lgnd3 = sprintf("%s%s", "N(t):", "¢èñïéóìá Ðëçèõóìþí X+Y")   
-h = plot(T, V(:,1), 'r', 'linewidth', 1.5, 'DisplayName', lgnd1, 
-         T, V(:,2), 'k', 'linewidth',  2, 'DisplayName', lgnd2,
-         T, V(:,1) + V(:,2), 'g', 'linewidth', 1, 'DisplayName', lgnd3)   
-legend;
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-%release hold of plot engine we finished with first figure
-hold off 
-
-figure    % need a second figure for the phase diagrams 
-
-hold on  % get the hold
-
+%%%%%%%%%%% Second figure %%%%%%%%%%%%%%%
+% Only sum of X(t)+Y(t) will be displayed
+figure(2)
+lgnd3 = sprintf("%s", "N(t): Î†Î¸ÏÎ¿Î¹ÏƒÎ¼Î± Î Î»Î·Î¸Ï…ÏƒÎ¼ÏŽÎ½ X+Y")   
+h2 = plot(T, V(:,1)+ V(:,2), 'g', 'linewidth', 1, 'DisplayName', lgnd3)   
+legend({lgnd3});
 % display specifics %
-xlabel('×(t): Ðëçèõóìüò ÈçñåõôÞ')
-ylabel('×(t): Ðëçèõóìüò ÈçñÜìáôïò')
-
+xlabel('Time t')
+ylabel('N(t) = Î˜Î·ÏÎµÏ…Ï„Î®Ï‚+Î˜Î®ÏÎ±Î¼Î± (X(t)+Y(t))')
 % set grid on
 grid on                                   
+% additional display properties  for the figure 
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Lotka-Voltera Prey-Predator model - Sum of populations')
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-% additional display properties  for the second figure phase diagrams S1(t) & S2(t)
+%%%%%%%%%%% Third figure %%%%%%%%%%%%%%%
+%%%%%%%%%%  Phase Portrait %%%%%%%%%%%%%
+figure(3)    % need a second figure for the phase diagrams 
+% Phase portait is a plot of X(t)-Î˜Î·ÏÎµÏ…Ï„Î®Ï‚ vs Y(t)-Î˜Î®ÏÎ±Î¼Î±
+h = plot(V(:,1), V(:,2), 'k', 'linewidth', 1)   
+% display specifics %
+xlabel('Î§(t): Î Î»Î·Î¸Ï…ÏƒÎ¼ÏŒÏ‚ Î˜Î·ÏÎµÏ…Ï„Î®')
+ylabel('Î§(t): Î Î»Î·Î¸Ï…ÏƒÎ¼ÏŒÏ‚ Î˜Î·ÏÎ¬Î¼Î±Ï„Î¿Ï‚')
+% set grid on
+grid on                                   
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model')
 
 
-% Phase portait is a plot of X(t)-ÈçñåõôÞò vs Y(t)-ÈÞñáìá
-h = plot(V(:,1), V(:,2), 'k', 'linewidth', 1)   
-hold off
