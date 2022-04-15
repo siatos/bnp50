@@ -8,10 +8,10 @@ y01(2) = 80  % Initial paey population
 %Tinterval = 0:0.05:50   % time step of 0.01 in total 201 values
 
 % Time interval
-Tinterval = linspace(0, 50, 1001)   % time step of 0.01 in total 1001 values
-
-Tinterval1 = linspace(0, 24.95, 500)   % time step of 0.01 in total 1001 values
-Tinterval2 = linspace(25, 50, 501)   % time step of 0.01 in total 1001 values
+Tinterval = linspace(0, 50, 1001)   % time step of 0.05 in total 1001 values
+% instead of using Tinterval we split in two halves: Tinterval=Tinterval1+Tinterval2 
+Tinterval1 = linspace(0, 24.95, 500)   % time step of 0.05 in total 500 values
+Tinterval2 = linspace(25, 50, 501)   % time step of 0.05 in total 501 values
 
 % we have two set of params declared as a vector of two rows
 % first row will be used for t < 25
@@ -45,9 +45,6 @@ function res = LV(t,V, params)
 end
 
 
-% hold the plot engine
-hold on 
-
 %  
 % use anonymous function and get the handle
 rate1 = @(t,V) LV(t,V, params1);
@@ -59,48 +56,52 @@ rate2 = @(t,V) LV(t,V, params2);
 [T1,V1] = ode45(rate1, Tinterval1, y01);
 [T2,V2] = ode45(rate2, Tinterval2, y01); 
 
-% display specifics %
-xlabel('Time t')
-ylabel('X(t): Θηρευτής - Y(t): Θήραμα - N=Θηρευτής+Θήραμα (X+Y)')
 
-% set grid on
-grid on                                   
+figure(1)
+lgnd1 = sprintf("%s%s", "X(t):", "ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ t < 25")
+lgnd2 = sprintf("%s%s", "Y(t):", "ΞΞ®ΟΞ±ΞΌΞ± t < 25")
+lgnd3 = sprintf("%s%s", "X(t):", "ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ 25<= t <50")
+lgnd4 = sprintf("%s%s", "Y(t):", "ΞΞ®ΟΞ±ΞΌΞ± 25<= t <50")
 
-% additional display properties  for the first figure concentrations S1(t) & S2(t)
-set(gca, 'fontsize', 24, 'linewidth', 1)  
-title('Lotka-Voltera Prey-Predator model')
-
-lgnd1 = sprintf("%s%s", "Χ(t):", "Πληθυσμός Θηρευτή")
-lgnd2 = sprintf("%s%s", "Υ(t):", "Πληθυσμός Θηράματος ")
-lgnd3 = sprintf("%s%s", "Χ(t):", "Πληθυσμός Θηρευτή -")
-lgnd4 = sprintf("%s%s", "Υ(t):", "Πληθυσμός Θηράματος -")
-%lgnd3 = sprintf("%s%s", "N(t):", "Άθροισμα Πληθυσμών X+Y")   
 h = plot(T1, V1(:,1), 'r', 'linewidth', 1.5, 'DisplayName', lgnd1, 
          T1, V1(:,2), 'k', 'linewidth',  2, 'DisplayName', lgnd2,
          T2, V2(:,1), 'g', 'linewidth', 1, 'DisplayName', lgnd3,
          T2, V2(:,2), 'c', 'linewidth', 1, 'DisplayName', lgnd4)   
 legend;
-
-
-%release hold of plot engine we finished with first figure
-hold off 
-
-figure    % need a second figure for the phase diagrams 
-
-hold on  % get the hold
-
 % display specifics %
-xlabel('Χ(t): Πληθυσμός Θηρευτή')
-ylabel('Χ(t): Πληθυσμός Θηράματος')
-
+xlabel('Time t')
+ylabel('X(t): ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ - Y(t): ΞΞ®ΟΞ±ΞΌΞ±')
 % set grid on
 grid on                                   
+% additional display properties  for the first figure concentrations S1(t) & S2(t)
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Lotka-Voltera Prey-Predator model')
 
-% additional display properties  for the second figure phase diagrams S1(t) & S2(t)
+
+
+figure(2) % need a second figure for the phase diagrams 
+% Phase portait is a plot of X(t)-ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ vs Y(t)-ΞΞ®ΟΞ±ΞΌΞ±
+h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
+% display specifics %
+xlabel('X(t): ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ t < 25')
+ylabel('Y(t): ΞΞ®ΟΞ±ΞΌΞ± t < 25')
+% set grid on
+grid on                                   
+% additional display properties
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Phase Portrait for Lotka-Voltera Model')
+
+figure(3) % need a third figure for the phase diagrams 
+% Phase portait is a plot of X(t)-ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ vs Y(t)-ΞΞ®ΟΞ±ΞΌΞ±
+h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
+% display specifics %
+xlabel('X(t): ΞΞ·ΟΞµΟ…Ο„Ξ®Ο‚ 25 < t')
+ylabel('Y(t): ΞΞ®ΟΞ±ΞΌΞ± 25 < t')
+% set grid on
+grid on                                   
+% additional display properties
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model')
 
 
-% Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
-h = plot(V(:,1), V(:,2), 'k', 'linewidth', 1)   
-hold off
+
