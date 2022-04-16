@@ -1,6 +1,5 @@
 clear all; 
 clf;
-%v0(1) = -100;
 %% Function definition %%%
 function res = membrane_potential(t,V, p)
    v1 = V(1)
