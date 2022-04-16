@@ -96,7 +96,7 @@ title('Lotka-Voltera Prey-Predator model - Sum of Populations')
 
 
 
-figure(3) % need a second figure for the phase diagrams 
+figure(3) % First figure for the phase portrait t < 25 
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
 % display specifics %
@@ -108,7 +108,7 @@ grid on
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model 1st case t < 25')
 
-figure(4) % need a third figure for the phase diagrams 
+figure(4) % Second figure for the phase portrait 25 <= t < 50
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V2(:,1), V2(:,2), 'k', 'linewidth', 1)   
 % display specifics %
