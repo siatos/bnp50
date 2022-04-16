@@ -2,7 +2,7 @@
 
 %Initial values and params
 y01(1) = 20  % Initial predator population
-y01(2) = 80  % Initial paey population
+y01(2) = 80  % Initial prey population
  
 %y0 = [20, 80];          % initial values of x & y
 %Tinterval = 0:0.05:50   % time step of 0.01 in total 201 values
