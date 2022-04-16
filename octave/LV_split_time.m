@@ -63,8 +63,8 @@ lgnd2 = sprintf("%s%s", "Y(t):", "Θήραμα t < 25")
 lgnd3 = sprintf("%s%s", "X(t):", "Θηρευτής 25<= t <50")
 lgnd4 = sprintf("%s%s", "Y(t):", "Θήραμα 25<= t <50")
 
-h = plot(T1, V1(:,1), 'r', 'linewidth', 1.5, 'DisplayName', lgnd1, 
-         T1, V1(:,2), 'k', 'linewidth',  2, 'DisplayName', lgnd2,
+h = plot(T1, V1(:,1), 'r', 'linewidth', 1, 'DisplayName', lgnd1, 
+         T1, V1(:,2), 'k', 'linewidth', 1, 'DisplayName', lgnd2,
          T2, V2(:,1), 'g', 'linewidth', 1, 'DisplayName', lgnd3,
          T2, V2(:,2), 'c', 'linewidth', 1, 'DisplayName', lgnd4)   
 legend;
@@ -78,8 +78,25 @@ set(gca, 'fontsize', 24, 'linewidth', 1)
 title('Lotka-Voltera Prey-Predator model')
 
 
+figure(2)
+lgnd1 = sprintf("%s%s", "X(t)+Y(t):", "Θηρευτής+Θήραμα t < 25")
+lgnd2 = sprintf("%s%s", "X(t)+Υ(t):", "Θηρευτής+Θήραμα 25 < t")
 
-figure(2) % need a second figure for the phase diagrams 
+h = plot(T1, V1(:,1)+V1(:,2), 'r', 'linewidth', 1, 'DisplayName', lgnd1, 
+         T2, V2(:,1)+V2(:,2), 'c', 'linewidth', 1, 'DisplayName', lgnd2)   
+legend;
+% display specifics %
+xlabel('Time t')
+ylabel('N(t)= X(t)+Y(t)')
+% set grid on
+grid on                                   
+% additional display properties  for the first figure concentrations S1(t) & S2(t)
+set(gca, 'fontsize', 24, 'linewidth', 1)  
+title('Lotka-Voltera Prey-Predator model - Sum of Populations')
+
+
+
+figure(3) % need a second figure for the phase diagrams 
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
 % display specifics %
@@ -91,7 +108,7 @@ grid on
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model 1st case t < 25')
 
-figure(3) % need a third figure for the phase diagrams 
+figure(4) % need a third figure for the phase diagrams 
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V2(:,1), V2(:,2), 'k', 'linewidth', 1)   
 % display specifics %
@@ -101,7 +118,4 @@ ylabel('Y(t): Θήραμα 25 < t')
 grid on                                   
 % additional display properties
 set(gca, 'fontsize', 24, 'linewidth', 1)  
-title('Phase Portrait for Lotka-Voltera Model 1st case t > 25')
-
-
-
+title('Phase Portrait for Lotka-Voltera Model 2nd case t > 25')
