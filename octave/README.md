@@ -10,4 +10,5 @@ Contains all octave code
 - <b>membrane_potential_ode.m</b>: solves and plots the ode of the above solution
 - <b>LV_split_time.m</b>: solves the sytem of odes of the LV model above but this time using two different but adjacent time intervals
 - <b>CA_Bind_rate.m</b>: calculates the protein bind rate 
+- <b>SVD.m</b>: calculates SVD (Singular Value Decomposition) of a given matrix 
 
