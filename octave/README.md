@@ -11,4 +11,4 @@ Contains all octave code
 - <b>LV_split_time.m</b>: solves the sytem of odes of the LV model above but this time using two different but adjacent time intervals
 - <b>CA_Bind_rate.m</b>: calculates the protein bind rate 
 - <b>SVD.m</b>: calculates SVD (Singular Value Decomposition) of a given matrix
-- <b>Gene_Distance.m</b>: calculates euclidean distance between geens and promoter distance using Jaccard formula
+- <b>Gene_Distance.m</b>: calculates euclidean distance between genes and promoter distance using Jaccard formula
