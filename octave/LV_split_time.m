@@ -69,7 +69,7 @@ xlabel('Time t')
 ylabel('X(t): Θηρευτής - Y(t): Θήραμα')
 % set grid on
 grid on                                   
-% additional display properties  for the first figure concentrations S1(t) & S2(t)
+% additional display properties  for the first figure 
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Lotka-Voltera Prey-Predator model')
 
@@ -86,7 +86,7 @@ xlabel('Time t')
 ylabel('N(t)= X(t)+Y(t)')
 % set grid on
 grid on                                   
-% additional display properties  for the first figure concentrations S1(t) & S2(t)
+% additional display properties  for the second figure 
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Lotka-Voltera Prey-Predator model - Sum of Populations')
 
