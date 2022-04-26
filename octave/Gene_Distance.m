@@ -6,7 +6,7 @@ for i=1:3
   for g=1:3
     sum=0
     for j=1:4
-       sum = sum + (X(g,j) - X(i, j))**2   
+       sum = sum + ((X(g,j) - X(i, j))**2)   
     endfor
     dE(g,i) = sqrt(sum)
   endfor
