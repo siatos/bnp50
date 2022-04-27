@@ -105,3 +105,4 @@ grid on
 % additional display properties
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model 2nd case t >= 25')
+
