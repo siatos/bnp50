@@ -16,12 +16,6 @@ Tinterval2 = linspace(25, 50, 501)     % time step of 0.05 in total 501 values
 params1 = [40 2 0.5 70];
 params2 = [20 1 0.25 35]
 
-
-colors = ['k', 'r']  % predator (X) color black, prey (Y) color red 
-colors1 = ['k', 'r']  % predator (X) color black, prey (Y) color red 
-colors2 = ['c', 'g']  % predator (X) color black, prey (Y) color red 
-
-
 % define a function that contains the system of LV odes
 function res = LV(t,V, params)
     % Dependent variables V - vector of v1 & v2
@@ -52,8 +46,7 @@ rate2 = @(t,V) LV(t,V, params2);
 [T1,V1] = ode45(rate1, Tinterval1, y01);
 [T2,V2] = ode45(rate2, Tinterval2, y01); 
 
-
-figure(1)   % First figure for the populations
+figure(1)   % First figure for the populations %
 lgnd1 = sprintf("%s%s", "X(t):", "Θηρευτής t < 25")
 lgnd2 = sprintf("%s%s", "Y(t):", "Θήραμα t < 25")
 lgnd3 = sprintf("%s%s", "X(t):", "Θηρευτής 25<= t <50")
@@ -73,8 +66,7 @@ grid on
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Lotka-Voltera Prey-Predator model')
 
-
-figure(2) % Second figure for the sum of populations
+figure(2) % Second figure for the sum of populations %
 lgnd1 = sprintf("%s%s", "X(t)+Y(t):", "Θηρευτής+Θήραμα t < 25")
 lgnd2 = sprintf("%s%s", "X(t)+Υ(t):", "Θηρευτής+Θήραμα 25 < t")
 
@@ -90,9 +82,7 @@ grid on
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Lotka-Voltera Prey-Predator model - Sum of Populations')
 
-
-
-figure(3) % Third figure for the phase portrait t < 25 
+figure(3) % Third figure for the phase portrait t < 25 %
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V1(:,1), V1(:,2), 'k', 'linewidth', 1)   
 % display specifics %
@@ -104,7 +94,7 @@ grid on
 set(gca, 'fontsize', 24, 'linewidth', 1)  
 title('Phase Portrait for Lotka-Voltera Model 1st case t < 25')
 
-figure(4) % Forth figure for the phase portrait 25 <= t < 50
+figure(4) % Forth figure for the phase portrait 25 <= t < 50  %
 % Phase portait is a plot of X(t)-Θηρευτής vs Y(t)-Θήραμα
 h = plot(V2(:,1), V2(:,2), 'k', 'linewidth', 1)   
 % display specifics %
