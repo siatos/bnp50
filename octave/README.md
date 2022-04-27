@@ -6,9 +6,9 @@ Contains all octave code
 - <b>concetration_lsode.m</b>: solves the odes that describe the concetrations s1(t) and s2(t) of two species. Uses lsode method to solve the odes 
 - <b>concetration_ode45.m</b>: solves the odes that describe the concetrations s1(t) and s2(t) of two species. Uses ode45 method to solve the odes
 - <b>LV.m</b>: solves the system of odes of the Lotka-Voltera Predator-Prey Model (uses ode45)
+- <b>LV_split_time.m</b>: solves the sytem of odes of the LV model above but this time using two different but adjacent time intervals
 - <b>membrane_potential.m</b>: solves and plots the mebrane potential graphs 
 - <b>membrane_potential_ode.m</b>: solves and plots the ode of the above solution
-- <b>LV_split_time.m</b>: solves the sytem of odes of the LV model above but this time using two different but adjacent time intervals
-- <b>CA_Bind_rate.m</b>: calculates the protein bind rate 
 - <b>SVD.m</b>: calculates SVD (Singular Value Decomposition) of a given matrix
 - <b>Gene_Distance.m</b>: calculates euclidean distance between genes and promoter distance using Jaccard formula
+- <b>CA_Bind_rate.m</b>: calculates the protein bind rate 
