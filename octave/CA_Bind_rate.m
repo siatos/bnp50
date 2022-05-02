@@ -15,7 +15,7 @@ t=linspace(0,1,101)
 % functions we need to calculate and plot %
 % t is actulaly a vector - we use scalar multiplication, division there the "dot" beside in every sign %
 
-Prot2Cax = (t .* Prot2T) ./((t .+ K2) .* (1+(t ./ KI)));
+Prot2Cax = (t .* Prot2T) ./ ((t .+ K2) .* (1+(t ./ KI)));
 Prot1Cay = (Prot1T .* t) ./ (K1 .+ t)
 
 % plot the functions
