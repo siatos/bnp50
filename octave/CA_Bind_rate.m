@@ -1,3 +1,4 @@
+% Calculate Protein Concentrations using given formulas %
 %clear all
 clear all; 
 clf;
