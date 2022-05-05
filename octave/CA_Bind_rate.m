@@ -39,6 +39,13 @@ grid on
 % additional display properties  for the figure
 set(gca, 'fontsize', 16, 'linewidth', 1)  
 title('Binding curves of the two proteins Prot2Cax & Prot1Cay')
+
+% enable below 2 lines to display axis with ticks  %
+% to enable better visualization                   %
+%set(gca, 'xtick', 0:0.05:1);
+%set(gca, 'ytick', 0:0.0001:0.002);
+%                                                  %
+
 %  set legends   %
 lgnd{1} = sprintf("Protein: Prot2Cax\n")
 lgnd{2} = sprintf("Protein: Prot1Cay\n")
