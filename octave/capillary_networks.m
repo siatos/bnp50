@@ -27,7 +27,7 @@ for k=1:12    %repetitions 12 in total%
            else
                CLN(i,j) = CLN(i, j) + 0.5*S(i, j)   % increase value of CLN(i,j) since S(i, j) >= 5
 		       end
-           S(i, j) = S(i, j) - 2                  % decrease respective S(i, j) in every repetition 
+           S(i, j) = S(i, j) - 2                  % decrease respective S(i, j) in every repetition
            if S(i, j) < 0
                S(i, j) = 0
            end
