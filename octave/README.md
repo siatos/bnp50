@@ -11,4 +11,4 @@ Contains all octave code
 - <b>membrane_potential_ode.m</b>: solves and plots the ode of the above solution
 - <b>SVD.m</b>: calculates SVD (Singular Value Decomposition) of a given matrix
 - <b>Gene_Distance.m</b>: calculates euclidean distance between genes and promoter distance using Jaccard formula
-- <b>capillary_networks.m:</b>
+- <b>capillary_networks.m & capillary_networks_v2.m:</b>
