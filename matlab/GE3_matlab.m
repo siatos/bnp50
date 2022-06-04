@@ -78,7 +78,7 @@ legend("1:eucl 2:cos 3:cor 4:city", "Location","northeast")
 set(legend, "fontsize", 12);
 
 
-%% Enf of q2                                                              %%  
+%% End of q2                                                              %%  
 
 
 %% erothma 3 -(q3)                                                           %%
@@ -102,7 +102,7 @@ xlabel('kmeans k values')
 ylabel('silhouette value')
 
 
-%% Enf of q3                                                              %%  
+%% End of q3                                                              %%  
 
 
 %% erothma 4 -(q4)%%
@@ -142,7 +142,7 @@ xlabel('pca 1st component')
 ylabel('pca 2nd component')
 
 
-%% Enf of q4                                                             %%  
+%% End of q4                                                             %%  
 
 %% display the frequencies of the 'class' variable as shown from previous %%
 %% who is: there are two variables: 'class' and 'data'                    %%
@@ -154,13 +154,3 @@ xlabel('classes')
 ylabel('class members')
 
 
-%% Enf of q4                                                             %%  
-
-%% display the frequencies of the 'class' variable as shown from previous %%
-%% who is: there are two variables: 'class' and 'data'                    %%
-%% Plot a hist of class data                                              %%
-figure(8)
-hist(class)
-title('Class Historgramm')
-xlabel('classes')
-ylabel('class members')
